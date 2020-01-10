@@ -1,7 +1,7 @@
 # version: "3"
 # services:
   app:
-    container_name: app:$BUILD_NUMBER
+    container_name: app_$BUILD_NUMBER
     restart: always
     build: ./api
     ports:
@@ -9,7 +9,7 @@
     links:
       - mongo
   client:
-    container_name: client:$BUILD_NUMBER
+    container_name: client_$BUILD_NUMBER
     restart: always
     build: ./client
     ports:
@@ -17,7 +17,7 @@
     links:
       - app
   mongo:
-    container_name: mongo:$BUILD_NUMBER
+    container_name: mongo_$BUILD_NUMBER
     image: mongo
     restart: always
     expose:
